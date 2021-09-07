@@ -1,0 +1,4 @@
+bs4
+pyduktape
+python-dateutil
+requests

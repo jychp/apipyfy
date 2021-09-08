@@ -13,7 +13,7 @@ class AisHubAPI:
 
     example:
         >>> api = AisHubAPI()
-        >>> for mmsi, data in api.get_ships(minLat, maxLat, minLon, maxLon).items():
+        >>> for mmsi, data in api.get_ships(lat, lon).items():
         >>>    print(mmsi, data)
         228244600 {'ship_name': 'ND RUMENGOL', 'positions': [{'lat': '48.39272', 'lon': '-4.42883', 'cog': 360, 'sog': 0}]}
     """
@@ -22,13 +22,13 @@ class AisHubAPI:
         self.session.headers.update({'Accept': 'application/json, text/javascript, */*; q=0.01',
                                      'X-Requested-With': 'XMLHttpRequest'})
         
-    def _get_stations(self, minLat, maxLat, minLon, maxLon):
+    def _get_stations(self, lat, lon):
         results = []
         try:
-            payload =  {'minLat': minLat, 
-                        'maxLat': maxLat, 
-                        'minLon': minLon, 
-                        'maxLon': maxLon,
+            payload =  {'minLat': lat - 0.2, 
+                        'maxLat': lat + 0.2, 
+                        'minLon': lon - 0.9, 
+                        'maxLon': lon + 0.9,
                         'zoom': 10,
                         't': int(time.time()),
                         'view': 'false'}
@@ -37,13 +37,13 @@ class AisHubAPI:
             for s in req.json()['stations']:
                 lat = float(s['lat'])
                 lon = float(s['lon'])
-                if lat > maxLat:
+                if lat > lat + 0.2:
                     continue
-                if lat < minLat:
+                if lat < lat - 0.2:
                     continue
-                if lon > maxLon:
+                if lon > lon + 0.9:
                     continue
-                if lon < minLon:
+                if lon < lon - 0.9:
                     continue
                 results.append(s)
         except requests.exceptions.HTTPError as errh:

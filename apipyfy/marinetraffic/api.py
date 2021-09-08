@@ -16,7 +16,7 @@ class MarineTrafficAPI(BaseAPI):
 
     example:
         >>> api = MarineTrafficAPI()
-        >>> for ship in api.get_ships(minLat, maxLat, minLon, maxLon):
+        >>> for ship in api.get_ships(lat, lon):
         >>>    print(ship)
         {'LAT': '48.11261', 'LON': '-5.08825', 'SPEED': '62', 'COURSE': '244', 'HEADING': None, 'ELAPSED': '1281', 'DESTINATION': 'CLASS B', 'FLAG': 'NO', 'LENGTH': '13', 'SHIPNAME': 'PATPICHA', 'SHIPTYPE': '9', 'SHIP_ID': '310662', 'WIDTH': '4', 'L_FORE': '10', 'W_LEFT': '2'}
     """
@@ -32,16 +32,18 @@ class MarineTrafficAPI(BaseAPI):
         ytile = int((1.0 - math.asinh(math.tan(lat_rad)) / math.pi) / 2.0 * n)
         return xtile, ytile
 
-    def get_ships(self, minLat, maxLat, minLon, maxLon):
+    def get_ships(self, lat, lon):
         results = []
         try:
-            centery = (maxLat - minLat) / 2 + minLat
-            centerx = (maxLon - minLon) / 2 + minLon
             # Get page
-            page_url = f"https://www.marinetraffic.com/en/ais/home/centerx:{centerx}/centery:{centery}/zoom:10"
+            page_url = f"https://www.marinetraffic.com/en/ais/home/centerx:{lon}/centery:{lat}/zoom:10"
             req = self.session.get(page_url, timeout=10)
             req.raise_for_status()
             # Calculate boxes
+            minLat = lat - 0.2
+            maxLat = lat + 0.2
+            minLon = lon - 0.90
+            maxLon = lon + 0.90
             start_x, start_y = self.deg_to_tiles(minLat, minLon)
             stop_x, stop_y = self.deg_to_tiles(maxLat, maxLon)
             x_borders = sorted([start_x, stop_x])
@@ -49,9 +51,11 @@ class MarineTrafficAPI(BaseAPI):
             # Get XHR
             for y in range(y_borders[0], y_borders[1] + 1):
                 for x in range(x_borders[0], x_borders[1] + 1):
+                    print(x, y)
                     xhr_url = f"https://www.marinetraffic.com/getData/get_data_json_4/z:10/X:{x}/Y:{y}/station:0"
                     req = self.session.get(xhr_url, timeout=5)
                     if req.status_code == 403:
+                        print(403)
                         continue
                     for s in req.json()['data']['rows']:
                         results.append(s)

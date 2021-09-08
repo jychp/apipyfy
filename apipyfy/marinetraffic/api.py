@@ -51,11 +51,10 @@ class MarineTrafficAPI(BaseAPI):
             # Get XHR
             for y in range(y_borders[0], y_borders[1] + 1):
                 for x in range(x_borders[0], x_borders[1] + 1):
-                    print(x, y)
                     xhr_url = f"https://www.marinetraffic.com/getData/get_data_json_4/z:10/X:{x}/Y:{y}/station:0"
                     req = self.session.get(xhr_url, timeout=5)
                     if req.status_code == 403:
-                        print(403)
+                        logger.debug(f"Error 403 for tile {x},{y}")
                         continue
                     for s in req.json()['data']['rows']:
                         results.append(s)

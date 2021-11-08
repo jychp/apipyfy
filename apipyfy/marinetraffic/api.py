@@ -32,26 +32,28 @@ class MarineTrafficAPI(BaseAPI):
         ytile = int((1.0 - math.asinh(math.tan(lat_rad)) / math.pi) / 2.0 * n)
         return xtile, ytile
 
-    def get_ships(self, lat, lon):
+    def get_ships(self, lat, lon, zoom=10):
         results = []
         try:
             # Get page
-            page_url = f"https://www.marinetraffic.com/en/ais/home/centerx:{lon}/centery:{lat}/zoom:10"
+            page_url = f"https://www.marinetraffic.com/en/ais/home/centerx:{lon}/centery:{lat}/zoom:{zoom}"
             req = self.session.get(page_url, timeout=10)
             req.raise_for_status()
             # Calculate boxes
-            minLat = lat - 0.2
-            maxLat = lat + 0.2
-            minLon = lon - 0.90
-            maxLon = lon + 0.90
-            start_x, start_y = self.deg_to_tiles(minLat, minLon)
-            stop_x, stop_y = self.deg_to_tiles(maxLat, maxLon)
+            delta_Lon=757.28*math.exp(-0.728*zoom)/2
+            delta_Lat=1291.5*math.exp(-0.681*zoom)/2
+            minLat = lat - delta_Lat
+            maxLat = lat + delta_Lat
+            minLon = lon - delta_Lon
+            maxLon = lon + delta_Lon
+            start_x, start_y = self.deg_to_tiles(minLat, minLon, zoom)
+            stop_x, stop_y = self.deg_to_tiles(maxLat, maxLon, zoom)
             x_borders = sorted([start_x, stop_x])
             y_borders = sorted([start_y, stop_y])
             # Get XHR
             for y in range(y_borders[0], y_borders[1] + 1):
                 for x in range(x_borders[0], x_borders[1] + 1):
-                    xhr_url = f"https://www.marinetraffic.com/getData/get_data_json_4/z:10/X:{x}/Y:{y}/station:0"
+                    xhr_url = f"https://www.marinetraffic.com/getData/get_data_json_4/z:{zoom}/X:{x}/Y:{y}/station:0"
                     req = self.session.get(xhr_url, timeout=5)
                     if req.status_code == 403:
                         logger.debug(f"Error 403 for tile {x},{y}")

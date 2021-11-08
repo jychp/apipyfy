@@ -40,21 +40,9 @@ class MarineTrafficAPI(BaseAPI):
             req = self.session.get(page_url, timeout=10)
             req.raise_for_status()
             # Calculate boxes
-            # delta_Lon=757.28*math.exp(-0.728*zoom)/2
-            # delta_Lat=1291.5*math.exp(-0.681*zoom)/2
-            # minLat = lat - delta_Lat
-            # maxLat = lat + delta_Lat
-            # minLon = lon - delta_Lon
-            # maxLon = lon + delta_Lon
             center_x, center_y = self.deg_to_tiles(lat, lon, zoom)
-
-            # start_x, start_y = self.deg_to_tiles(minLat, minLon, zoom)
-            # stop_x, stop_y = self.deg_to_tiles(maxLat, maxLon, zoom)
-            # x_borders = sorted([start_x, stop_x])
-            # y_borders = sorted([start_y, stop_y])
             # Get XHR
             for y in (center_y - 1, center_y, center_y + 1):
-                print(y)
                 for x in (center_x - 1, center_x, center_x + 1):
                     xhr_url = f"https://www.marinetraffic.com/getData/get_data_json_4/z:{zoom}/X:{x}/Y:{y}/station:0"
                     req = self.session.get(xhr_url, timeout=5)

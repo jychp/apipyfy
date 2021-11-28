@@ -9,7 +9,7 @@ from apipyfy.base import BaseAPI
 logger = logging.getLogger('apipyfy-skypli')
 
 
-class SkiplyAPI(BaseAPI):
+class SkipliAPI(BaseAPI):
     """
     API for https://www.skypli.com
 

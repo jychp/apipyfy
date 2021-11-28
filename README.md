@@ -27,6 +27,7 @@ Using this repo can be against ToS, scripts are provided for educational purpose
 | **RapidDNSAPI**      | rapiddns.io       | Domain name / IP | Domains / Subdomains |
 | **ReverseWhoisAPI**  | reversewhois.io   | Name / Mail   | Domains     |
 | **SkipliAPI**        | skiply.com        | Person        | Personnal data and Skype Account |
+| **SocieteNinjaAPI**  | societe.ninja     | Person or Company | French company details |
 | **SpyOnWebAPI**      | spyonweb.com      | Domain name / Google Analytics / Google AdSense / IP | Domain name / Google Analytics / Google AdSense |
 | **W3TechsAPI**       | w3techs.com       | Domain name   | Web site information (CMS, Server ...) |
 | **WikileaksAPI**     | wikileaks.org     | *             | Related leaks |

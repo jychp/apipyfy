@@ -16,6 +16,7 @@ from .openbugbounty import OpenBugbountyAPI
 from .rapiddns import RapidDNSAPI
 from .reversewhois import ReverseWhoisAPI
 from .skypli import SkypliAPI
+from .societeninja import SocieteNinjaAPI
 from .spyonweb import SpyOnWebAPI
 from .w3techs import W3TechsAPI
 from .wikileaks import WikileaksAPI

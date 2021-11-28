@@ -2,6 +2,7 @@ import logging
 
 import requests
 from bs4 import BeautifulSoup
+from dateutil.parser import parse as dt_parse
 
 from apipyfy.base import BaseAPI
 
@@ -18,7 +19,7 @@ class SkiplyAPI(BaseAPI):
         >>> api = SkypliAPI()
         >>> for p in api.search('John Doe'):
         >>>    print(p)
-        {'id': 'john.doe42', 'fullname': 'John Doe', 'avatar': '/assets/images/no_image.jpg', 'address': 'Paris France', 'gender': 'male', 'birthday': '1946-02-08'}    
+        {'id': 'john.doe42', 'fullname': 'John Doe', 'avatar': '/assets/images/no_image.jpg', 'address': 'Paris France', 'gender': 'male', 'birthday': datetime('1946-02-08')}    
     """
     def __init__(self, user_agent='ApiPyFy/1.0.0', proxy=None) -> None:
         super().__init__(user_agent, proxy)
@@ -68,7 +69,7 @@ class SkiplyAPI(BaseAPI):
                     elif k == 'Country':
                         address.append(v.title())
                     elif k == 'Birthday':
-                        user['birthday'] = v
+                        user['birthday'] = dt_parse(v)
                     elif k == 'Gender':
                         user['gender'] = v.lower()
                 if len(address) > 0:

@@ -9,7 +9,7 @@ from apipyfy.base import BaseAPI
 logger = logging.getLogger('apipyfy-skypli')
 
 
-class SkipliAPI(BaseAPI):
+class SkypliAPI(BaseAPI):
     """
     API for https://www.skypli.com
 
@@ -21,7 +21,7 @@ class SkipliAPI(BaseAPI):
         >>>    print(p)
         {'id': 'john.doe42', 'fullname': 'John Doe', 'avatar': '/assets/images/no_image.jpg', 'address': 'Paris France', 'gender': 'male', 'birthday': datetime('1946-02-08')}    
     """
-    def __init__(self, user_agent='ApiPyFy/1.0.0', proxy=None) -> None:
+    def __init__(self, user_agent=None, proxy=None) -> None:
         super().__init__(user_agent, proxy)
         self._base_url = 'https://www.skypli.com'
 

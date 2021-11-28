@@ -21,7 +21,7 @@ class CopainDavantAPI(BaseAPI):
         >>>    print(p)
         {'fullname': 'John Doe', 'id': 'john-doe-12345', 'avatar': 'https://image-uniservice.linternaute.com/image/75/5/12345/7890.jpg', 'birthday': datetime('1 avril 1987'), 'address': '1 avenue de Paradis Paris France', 'job': 'Pentester', 'rels': [{'id': 'alice-bob-22222', 'fullname': 'Alice Bob'}]}
     """
-    def __init__(self, user_agent='ApiPyFy/1.0.0', proxy=None) -> None:
+    def __init__(self, user_agent=None, proxy=None) -> None:
         super().__init__(user_agent, proxy)
         self.session.headers.update({'Accept':'application/json, text/javascript, */*; q=0.01',
                                      'X-Requested-With':'XMLHttpRequest'})

@@ -22,7 +22,7 @@ class KeyCDNAPI(BaseAPI):
         >>> print(r)
         {'lat': -33.494, 'long': 143.2104, 'country_name': 'Australia', 'country_code': 'au', 'city_name': None, 'asn': 13335, 'provider': 'CLOUDFLARENET'}
     """
-    def __init__(self, user_agent='ApiPyFy/1.0.0', proxy=None) -> None:
+    def __init__(self, user_agent=None, proxy=None) -> None:
         super().__init__(user_agent, proxy)
         self.session.headers.update({'Accept': 'application/json, text/javascript, */*; q=0.01',
                                      'X-Requested-With': 'XMLHttpRequest'})

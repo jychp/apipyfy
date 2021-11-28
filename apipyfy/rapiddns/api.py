@@ -24,7 +24,7 @@ class RapidDNSAPI(BaseAPI):
         >>>    print(d)
         {'domain': 'domain.tld', 'target': '1.1.1.1', 'type': 'A', 'date': <datetime>}
     """
-    def __init__(self, user_agent='ApiPyFy/1.0.0', proxy=None) -> None:
+    def __init__(self, user_agent=None, proxy=None) -> None:
         super().__init__(user_agent, proxy)
         self.session.headers.update({
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',

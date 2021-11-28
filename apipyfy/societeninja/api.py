@@ -23,7 +23,7 @@ class SocieteNinjaAPI(BaseAPI):
         >>> api.search_leader('John Doe')
         >>> api.company_details('123456789')
     """
-    def __init__(self, user_agent='ApiPyFy/1.0.0', proxy=None) -> None:
+    def __init__(self, user_agent=None, proxy=None) -> None:
         super().__init__(user_agent, proxy)
         self._base_url = 'https://societe.ninja'
 
@@ -37,6 +37,7 @@ class SocieteNinjaAPI(BaseAPI):
             'naf': None,
             'activity': None,
             'tva': None,
+            'creation_date': None,
             'leaders': [],
             'owners': [],
             'employes': []

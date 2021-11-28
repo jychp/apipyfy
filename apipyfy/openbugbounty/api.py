@@ -21,7 +21,7 @@ class OpenBugbountyAPI(BaseAPI):
         >>> print(r)
         {'id': 1162858, 'domain': 'facebook.com', 'researcher': 'DkilerS2', 'status': 'unpatched', 'type': 'Cross Site Scripting', 'date': datetime.datetime(2020, 5, 16, 0, 0)}
     """
-    def __init__(self, user_agent='ApiPyFy/1.0.0', proxy=None) -> None:
+    def __init__(self, user_agent=None, proxy=None) -> None:
         super().__init__(user_agent, proxy)
         self._base_url = 'http://213.168.250.151'
         self.session.headers.update({'Host':'www.openbugbounty.org'})

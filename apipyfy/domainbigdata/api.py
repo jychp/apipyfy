@@ -20,7 +20,7 @@ class DomainBigDataAPI(BaseAPI):
         >>>    print(d)
         other_domain.tld
     """
-    def __init__(self, user_agent='ApiPyFy/1.0.0', proxy=None) -> None:
+    def __init__(self, user_agent=None, proxy=None) -> None:
         super().__init__(user_agent, proxy)
         self.base_url = 'https://domainbigdata.com'
 

@@ -20,7 +20,7 @@ class IpFingerprintsAPI(BaseAPI):
         >>> print(r)
         {'lat': -33.493999, 'long': 143.210403, 'country_name': 'Australia', 'country_code': 'AU', 'city_name': None, 'provider': 'Mountain View Communications'}
     """
-    def __init__(self, user_agent='ApiPyFy/1.0.0', proxy=None) -> None:
+    def __init__(self, user_agent=None, proxy=None) -> None:
         super().__init__(user_agent, proxy)
         self._base_url = 'https://www.ipfingerprints.com/scripts/getIPInfo.php'
 

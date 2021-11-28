@@ -20,7 +20,7 @@ class BuiltWithAPI(BaseAPI):
         >>>    print(d)
         {'Category': ['element1', 'element2']}
     """
-    def __init__(self, user_agent='ApiPyFy/1.0.0', proxy=None) -> None:
+    def __init__(self, user_agent=None, proxy=None) -> None:
         super().__init__(user_agent, proxy)
         self._base_url = 'https://builtwith.com'
 

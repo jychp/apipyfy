@@ -22,7 +22,7 @@ class WikileaksAPI(BaseAPI):
         >>> print(r)
         {'url': 'https://wikileaks.org/opcw-douma/document/RedactedInterimReport/', 'title': 'WikiLeaks - RedactedInterimReport', 'leak': 'OPCW Douma Docs', 'summary': '... status/982854571952431104    \uf0b7 https://twitter.com/KokachOmar/status/982851902223286272    \uf0b7 https ... -180407135235699.html    \uf0b7 https://m.facebook.com/story.php? story_fbid= ... -idUSKBN1HF09Z    \uf0b7 https://twitter.com/AsaadHannaa/status/982998575222312961  \uf0b7 http ...', 'released_date': datetime.datetime(2019, 10, 23, 0, 0)}
     """
-    def __init__(self, user_agent='ApiPyFy/1.0.0', proxy=None) -> None:
+    def __init__(self, user_agent=None, proxy=None) -> None:
         super().__init__(user_agent, proxy)
         self._base_url = 'https://search.wikileaks.org'
 

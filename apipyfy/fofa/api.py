@@ -21,7 +21,7 @@ class FofaAPI(BaseAPI):
         >>> for d in api.search('"Sailor 900"'):
         >>>    print(d)
     """
-    def __init__(self, user_agent='ApiPyFy/1.0.0', proxy=None) -> None:
+    def __init__(self, user_agent=None, proxy=None) -> None:
         super().__init__(user_agent, proxy)
         self._base_url = 'https://fofa.so'
 

@@ -22,7 +22,7 @@ class DbIpAPI(BaseAPI):
         >>> print(r)
         {'lat': -20.5, 'long': 120.15, 'country_code': 'au', 'city_name': 'Marble Bar', 'is_proxy': False, 'is_crawler': False, 'is_threat': False}
     """
-    def __init__(self, user_agent='ApiPyFy/1.0.0', proxy=None) -> None:
+    def __init__(self, user_agent=None, proxy=None) -> None:
         super().__init__(user_agent, proxy)
         self.session.headers.update({'Host': 'db-ip.com'})
         self._base_url = 'https://144.217.254.112'

@@ -13,6 +13,7 @@ from .keycdn import KeyCDNAPI
 from .mnemonic import MnemonicAPI
 from .moonsearch import MoonsearchAPI
 from .openbugbounty import OpenBugbountyAPI
+from .pappers import PappersAPI
 from .rapiddns import RapidDNSAPI
 from .reversewhois import ReverseWhoisAPI
 from .skypli import SkypliAPI

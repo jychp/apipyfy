@@ -21,7 +21,7 @@ class W3TechsAPI(BaseAPI):
         >>> print(r)
         {'Server-side Programming Language': ['PHP'], 'Client-side Programming Language': ['JavaScript'], 'SSL Certificate Authority': ['DigiCert'], 'Advertising Networks': ['Google Ads', 'Microsoft Advertising'], 'Site Elements': ['External CSS', 'Embedded CSS', 'Inline CSS', 'Cookies expiring in months', 'Cookies expiring in years', 'HttpOnly Cookies', 'Secure Cookies', 'Brotli Compression', 'IPv6', 'HTTP/3', 'HTTP Strict Transport Security', 'Default subdomain www', 'Default protocol https', 'Session Cookies', 'Non-Secure Cookies'], 'Structured Data Formats': ['Open Graph', 'JSON-LD'], 'Markup Language': ['HTML5'], 'Character Encoding': ['UTF-8'], 'Image File Formats': ['SVG', 'GIF', 'PNG'], 'Top Level Domain': ['.com'], 'Server Locations': ['United States'], 'Content Languages': ['English'], 'Share this page': []}
     """
-    def __init__(self, user_agent='ApiPyFy/1.0.0', proxy=None) -> None:
+    def __init__(self, user_agent=None, proxy=None) -> None:
         super().__init__(user_agent, proxy)
         self._base_url = 'https://w3techs.com/sites/info'
 

@@ -24,6 +24,7 @@ Using this repo can be against ToS, scripts are provided for educational purpose
 | **MnemonicAPI**      | passivedns.mnemonic.no | IP       | DNS History |
 | **MoonsearchAPI**    | moonsearch.com    | Domain name / Google Analytics /Google AdSense | Domain name / Google Analytics / Google AdSense |
 | **OpenBugbountyAPI** | openbugbounty.com | Domain name   | Vulnerabilities |
+| **PappersAPI**       | pappers.fr        | Person or Company | French company details |
 | **RapidDNSAPI**      | rapiddns.io       | Domain name / IP | Domains / Subdomains |
 | **ReverseWhoisAPI**  | reversewhois.io   | Name / Mail   | Domains     |
 | **SkipliAPI**        | skiply.com        | Person        | Personnal data and Skype Account |

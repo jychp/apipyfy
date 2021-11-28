@@ -5,7 +5,7 @@ import requests
 
 class BaseAPI(ABC):
     """ Base class for every API """
-    def __init__(self, user_agent='ApiPyFy/1.0.0', proxy=None) -> None:
+    def __init__(self, user_agent='ApiPyFy/1.0.1', proxy=None) -> None:
         super().__init__()
         self.session = requests.Session()
         self.session.headers.update({'User-Agent': user_agent})

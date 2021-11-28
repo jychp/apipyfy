@@ -18,7 +18,7 @@ class GeodataToolAPI(BaseAPI):
         >>> print(r)
         {'lat': 34.05223, 'long': -118.24368, 'country_name': 'United States', 'country_code': 'US', 'city_name': None}
     """
-    def __init__(self, user_agent='ApiPyFy/1.0.0', proxy=None) -> None:
+    def __init__(self, user_agent=None, proxy=None) -> None:
         super().__init__(user_agent, proxy)
         self._base_url = 'https://www.geodatatool.com/en/'
 

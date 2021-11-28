@@ -17,7 +17,7 @@ class AisHubAPI:
         >>>    print(mmsi, data)
         228244600 {'ship_name': 'ND RUMENGOL', 'positions': [{'lat': '48.39272', 'lon': '-4.42883', 'cog': 360, 'sog': 0}]}
     """
-    def __init__(self, user_agent='ApiPyFy/1.0.0', proxy=None) -> None:
+    def __init__(self, user_agent=None, proxy=None) -> None:
         super().__init__(user_agent, proxy)
         self.session.headers.update({'Accept': 'application/json, text/javascript, */*; q=0.01',
                                      'X-Requested-With': 'XMLHttpRequest'})

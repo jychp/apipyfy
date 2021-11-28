@@ -14,6 +14,7 @@ from .mnemonic import MnemonicAPI
 from .moonsearch import MoonsearchAPI
 from .openbugbounty import OpenBugbountyAPI
 from .pappers import PappersAPI
+from .qwant import QwantAPI
 from .rapiddns import RapidDNSAPI
 from .reversewhois import ReverseWhoisAPI
 from .skypli import SkypliAPI

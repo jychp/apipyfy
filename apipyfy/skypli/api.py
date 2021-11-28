@@ -76,16 +76,3 @@ class SkypliAPI(BaseAPI):
                     user['address'] = ' '.join(address)
                 results.append(user)
             return results
-
-        except requests.exceptions.HTTPError as errh:
-            logger.error(f"Http Error: {errh}")
-            return None
-        except requests.exceptions.ConnectionError as errc:
-            logger.error(f"Error Connecting: {errc}")
-            return None
-        except requests.exceptions.Timeout as errt:
-            logger.error(f"Timeout Error: {errt}")
-            return None
-        except requests.exceptions.RequestException as err:
-            logger.error(f"Uh-oh: Something Bad Happened {err}")
-            return None

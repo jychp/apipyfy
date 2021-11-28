@@ -4,6 +4,12 @@ This repo contains some script to provide "API" interface for website that does 
 
 Using this repo can be against ToS, scripts are provided for educational purpose only. Please read ToS and use this scripts only if you are authorize to.
 
+# Install
+
+```cmd
+python3 -m pip install git+https://github.com/jychp/apipyfy
+```
+
 # Available API
 
 | **API Name**         | **Website**       | **Search on** | **Infos**   |
@@ -25,6 +31,7 @@ Using this repo can be against ToS, scripts are provided for educational purpose
 | **MoonsearchAPI**    | moonsearch.com    | Domain name / Google Analytics /Google AdSense | Domain name / Google Analytics / Google AdSense |
 | **OpenBugbountyAPI** | openbugbounty.com | Domain name   | Vulnerabilities |
 | **PappersAPI**       | pappers.fr        | Person or Company | French company details |
+| **QwantAPI**         | qwant.com         | *             | Search engin results ... |
 | **RapidDNSAPI**      | rapiddns.io       | Domain name / IP | Domains / Subdomains |
 | **ReverseWhoisAPI**  | reversewhois.io   | Name / Mail   | Domains     |
 | **SkipliAPI**        | skiply.com        | Person        | Personnal data and Skype Account |

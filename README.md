@@ -10,6 +10,7 @@ Using this repo can be against ToS, scripts are provided for educational purpose
 |----------------------|-------------------|---------------|-------------|
 | **AisHubAPI**        | aishub.net        | Lat/Long pos  | Ships       |
 | **BuildWithAPI**     | buildwith.com     | Domain name   | Web site information (CMS, Server ...) |
+| **CopainDavantAPI**  | copainsdavant.linternaute.com | Persons | Personnal data and friends |
 | **DbIpAPI**          | db-ip.com         | IP            | Geo Data / Blacklist |
 | **DNSDumpsterAPI**   | dnsdumpster.com   | Domain name   | Subdomains  |
 | **DomainBigDataAPI** | domainbigdata.com | Domain name   | Related domain based on registration data. |

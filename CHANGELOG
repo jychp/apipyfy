@@ -13,8 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
  - Add SocieteNinjaAPI
  - Add PappersAPI
  - Add QwantAPI
+ - Add PagesBlanchesAPI
  - Add Pip install script
-
 ### Deleted
  - Delete MarineTrafficAPI (not working anymore)
 

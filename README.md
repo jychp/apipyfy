@@ -30,6 +30,7 @@ python3 -m pip install git+https://github.com/jychp/apipyfy
 | **MnemonicAPI**      | passivedns.mnemonic.no | IP       | DNS History |
 | **MoonsearchAPI**    | moonsearch.com    | Domain name / Google Analytics /Google AdSense | Domain name / Google Analytics / Google AdSense |
 | **OpenBugbountyAPI** | openbugbounty.com | Domain name   | Vulnerabilities |
+| **PagesBlanchesAPI** | 118000.fr         | Person        | Addresse and Phone Number |
 | **PappersAPI**       | pappers.fr        | Person or Company | French company details |
 | **QwantAPI**         | qwant.com         | *             | Search engin results ... |
 | **RapidDNSAPI**      | rapiddns.io       | Domain name / IP | Domains / Subdomains |

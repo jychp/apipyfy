@@ -7,7 +7,7 @@ from apipyfy.base import BaseAPI
 logger = logging.getLogger('apipyfy-qwant')
 
 
-class PappersAPI(BaseAPI):
+class QwantAPI(BaseAPI):
     """
     API for https://www.qwant.com
 
@@ -45,7 +45,6 @@ class PappersAPI(BaseAPI):
                 req = self.session.get(self._api_url, params=params, timeout=60)
                 req.raise_for_status()
                 data = req.json()['data']['result']
-                total = data['total']
                 for i in data['items']['mainline']:
                     if i['type'] != 'web':
                         continue

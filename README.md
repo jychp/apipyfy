@@ -10,7 +10,7 @@ Using this repo can be against ToS, scripts are provided for educational purpose
 |----------------------|-------------------|---------------|-------------|
 | **AisHubAPI**        | aishub.net        | Lat/Long pos  | Ships       |
 | **BuildWithAPI**     | buildwith.com     | Domain name   | Web site information (CMS, Server ...) |
-| **CopainDavantAPI**  | copainsdavant.linternaute.com | Persons | Personnal data and friends |
+| **CopainDavantAPI**  | copainsdavant.linternaute.com | Person | Personnal data and friends |
 | **DbIpAPI**          | db-ip.com         | IP            | Geo Data / Blacklist |
 | **DNSDumpsterAPI**   | dnsdumpster.com   | Domain name   | Subdomains  |
 | **DomainBigDataAPI** | domainbigdata.com | Domain name   | Related domain based on registration data. |
@@ -26,6 +26,7 @@ Using this repo can be against ToS, scripts are provided for educational purpose
 | **OpenBugbountyAPI** | openbugbounty.com | Domain name   | Vulnerabilities |
 | **RapidDNSAPI**      | rapiddns.io       | Domain name / IP | Domains / Subdomains |
 | **ReverseWhoisAPI**  | reversewhois.io   | Name / Mail   | Domains     |
+| **SkipliAPI**        | skiply.com        | Person        | Personnal data and Skype Account |
 | **SpyOnWebAPI**      | spyonweb.com      | Domain name / Google Analytics / Google AdSense / IP | Domain name / Google Analytics / Google AdSense |
 | **W3TechsAPI**       | w3techs.com       | Domain name   | Web site information (CMS, Server ...) |
 | **WikileaksAPI**     | wikileaks.org     | *             | Related leaks |

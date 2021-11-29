@@ -56,7 +56,7 @@ class CopainDavantAPI(BaseAPI):
                     address = ' '.join(address)
                 else:
                     address = None
-                user = {'fullname': details.get('lib').split(' (').title(),
+                user = {'fullname': details.get('lib').split(' (')[0].title(),
                         'id': details.get('url')[3:],
                         'avatar': details.get('img'),
                         'birthday': dt_parse(details.get('dat')),

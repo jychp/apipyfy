@@ -54,7 +54,9 @@ class SkypliAPI(BaseAPI):
                 soup2 = BeautifulSoup(req2.content, 'html.parser')
                 # Find avatar
                 avatar_div = soup2.find('div', attrs={'class': 'profile-box__info-image'})
-                user['avatar'] = avatar_div['style'].split("url('")[-1][:-2]
+                avatar_url = avatar_div['style'].split("url('")[-1][:-2]
+                if avatar_url != '/assets/images/no_image.jpg':
+                    user['avatar'] = avatar_url
                 # Find data
                 address = []
                 for row in soup2.find_all('div', attrs={'class': 'profile-box__table-row'}):

@@ -1,8 +1,8 @@
 import logging
+import datetime as dt
 
 import requests
 from bs4 import BeautifulSoup
-from dateutil.parser import parse as dt_parse
 
 from apipyfy.base import BaseAPI
 
@@ -26,6 +26,26 @@ class CopainDavantAPI(BaseAPI):
         self.session.headers.update({'Accept':'application/json, text/javascript, */*; q=0.01',
                                      'X-Requested-With':'XMLHttpRequest'})
         self._base_url = 'http://copainsdavant.linternaute.com'
+
+    def _parse_date(self, raw_date):
+        if raw_date is None:
+            return None
+        text_to_number = {'janvier': 1,
+                          'février': 2,
+                          'mars': 3,
+                          'avril': 4,
+                          'mai': 5,
+                          'juin': 6,
+                          'juillet': 7,
+                          'août': 8,
+                          'septembre': 9,
+                          'octobre': 10,
+                          'novembre': 11,
+                          'décembre': 12}
+        t = str(raw_date).strip().split(' ')
+        if len(t) != 3:
+            return None
+        return dt.datetime(year=int(t[2]), month=text_to_number[t[1]], day=int(t[0]))
 
     def search(self, full_name):
         try:
@@ -59,7 +79,7 @@ class CopainDavantAPI(BaseAPI):
                 user = {'fullname': details.get('lib').split(' (')[0].title(),
                         'id': details.get('url')[3:],
                         'avatar': details.get('img'),
-                        'birthday': dt_parse(details.get('dat')),
+                        'birthday': self._parse_date(details.get('dat')),
                         'address': address,
                         'job': details['pro'],
                         'rels': []
